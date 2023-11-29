@@ -1,0 +1,6 @@
+<!-- app/views/purchases/new.html.erb -->
+<h1>New Transaction for <%= @group.name %></h1>
+
+<%= render 'form', purchase: @purchase %>
+
+<%= link_to 'Back to Transactions', group_purchases_path(@group) %>
