@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'splash#index'
+  root 'groups#index'
 
-  resources :groups, only: [:index, :new, :create] do
-    resources :purchases, only: [:index, :new, :create]
+  resources :groups, only: [:index, :show, :new, :create] do
+    resources :purchases, only: [:new, :create]
   end
-
-  resources :purchases, only: [:index, :new, :create]
 
 end
