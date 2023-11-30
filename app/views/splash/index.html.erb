@@ -4,8 +4,18 @@
   <title>Budget app</title>
 </head>
 <body>
-  <h1>Budget app</h1>
-  <%= link_to 'Sign Up', new_user_registration_path %>
-  <%= link_to 'Log In', new_user_session_path %>
+  <div class="header-container">
+    <div class="title-container">
+      <h1>Budget app</h1>
+    </div>
+    <div class="authentication-links">
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'login-link' %>
+      <%= link_to 'Log In', new_user_session_path, class: 'login-link' %>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <h4>Outrageously simple transactions.</h4>
+  </div>
 </body>
 </html>

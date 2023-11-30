@@ -1,3 +1,7 @@
 class SplashController < ApplicationController
-  def index; end
-end
+    layout 'splash'
+  
+    def index
+    end
+  end
+  
