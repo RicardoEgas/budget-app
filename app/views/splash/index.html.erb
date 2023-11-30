@@ -4,18 +4,16 @@
   <title>Budget app</title>
 </head>
 <body>
-  <div class="header-container">
-    <div class="title-container">
-      <h1>Budget app</h1>
+ <section class="splash-section flex justify-center items-center h-[100vh]">
+    <div class="splash-container w-[100%] flex flex-col ">
+        <div class=" title-container h-[60vh] flex items-center justify-center ">
+        <h2 class="text-center text-3xl font-semibold splash-title">Budget App</h2>
     </div>
-    <div class="authentication-links">
-      <%= link_to 'Sign Up', new_user_registration_path, class: 'login-link' %>
-      <%= link_to 'Log In', new_user_session_path, class: 'login-link' %>
+    <div class="log-in-container flex flex-col w-[80%] mx-auto mt-16">
+        <%= link_to "LOG IN", new_user_session_path, class: 'px-3 py-2 border text-center btn my-2' %>
+        <%= link_to "SIGN UP", new_user_registration_path, class: 'px-3 py-2  text-center text-gray-500 btn2' %>
     </div>
-  </div>
-
-  <div class="content-container">
-    <h4>Outrageously simple transactions.</h4>
-  </div>
+    </div>   
+  </section>
 </body>
 </html>

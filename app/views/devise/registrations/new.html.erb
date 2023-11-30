@@ -1,34 +1,28 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="form-container h-[100vh] pt-10">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-body h-[77vh]">
+      <div class="field py-3">
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Full Name', class: 'py-2 border-b w-[90%] mx-auto block outline-none text-md' %>
+      </div>
 
-    <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+      <div class="field py-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: 'py-2 border-b w-[90%] mx-auto block outline-none text-md' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class="field py-3">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'py-2 border-b w-[90%] mx-auto block outline-none text-md' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <div class="field pt-3">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm Password', class: 'py-2 border-b w-[90%] mx-auto block outline-none text-md' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="actions flex justify-center px-5 py-7 sign-up-container">
+      <%= f.submit "Sign up", class: 'border border-white text-center px-7 text-white py-3 w-[80%]' %>
+    </div>
+  <% end %>
+</div>
