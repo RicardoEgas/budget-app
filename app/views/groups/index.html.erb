@@ -4,7 +4,7 @@
   <div>
     <h2><%= group.name %></h2>
     <p>Icon: <%= group.icon %></p>
-    <p>Total Amount: <%= group.purchases.sum(:amount) %></p>
+    <p>Total Amount: $<%= group.purchases.sum(:amount) %></p>
     <%= link_to 'View Transactions', group_purchases_path(group) %>
   </div>
 <% end %>
