@@ -1,0 +1,15 @@
+<h1>Transactions for <%= @group.name %></h1>
+
+<p>Total Amount: $<%= @total_amount %></p>
+
+<%= link_to 'Add a new transaction', new_group_purchase_path(@group) %>
+
+<% @purchases.each do |purchase| %>
+  <div>
+    <h3><%= purchase.name %></h3>
+    <p>Amount: $<%= purchase.amount %></p>
+    <p>Created at: <%= purchase.created_at %></p>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Groups', groups_path %>

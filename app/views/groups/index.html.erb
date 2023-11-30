@@ -1,0 +1,12 @@
+<h1>Your Categories</h1>
+
+<% @groups.each do |group| %>
+  <div>
+    <h2><%= group.name %></h2>
+    <p>Icon: <%= group.icon %></p>
+    <p>Total Amount: $<%= group.purchases.sum(:amount) %></p>
+    <%= link_to 'View Transactions', group_purchases_path(group) %>
+  </div>
+<% end %>
+
+<%= link_to 'Add a new category', new_group_path %>
