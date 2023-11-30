@@ -1,5 +1,8 @@
 <h2>Sign up</h2>
-
+<% content_for :navbar_links do %>
+  <%= link_to "REGISTER", new_user_registration_path %>
+  <%= link_to "LOG IN", new_user_session_path, class: 'text-sm' %>
+<% end %>
 <div class="form-container h-[100vh] pt-10">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>

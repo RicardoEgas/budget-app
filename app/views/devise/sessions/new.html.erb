@@ -1,4 +1,8 @@
 <h2>Log in</h2>
+<% content_for :navbar_links do %>
+  <%= link_to "LOG IN", new_user_session_path %>
+  <%= link_to "REGISTER", new_user_registration_path, class: 'text-sm' %>
+<% end %>
 
 <div class="form-container h-100vh pt-10">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
