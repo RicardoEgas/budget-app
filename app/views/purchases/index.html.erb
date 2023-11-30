@@ -1,3 +1,6 @@
+<% content_for :additional_links do %>
+  <%= link_to 'Back to Categories', groups_path, class: 'ml-4 text-white' %>
+<% end %>
 <div class="container mx-auto mt-8 text-center">
   <h1 class="text-3xl font-semibold mb-6">Transactions for <%= @group.name %></h1>
 
@@ -17,6 +20,4 @@
       </div>
     </div>
   <% end %>
-
-  <%= link_to 'Back to Groups', groups_path, class: 'text-gray-500 hover:underline block mb-8' %>
 </div>

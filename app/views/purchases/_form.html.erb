@@ -23,12 +23,9 @@
       <%= f.number_field :amount, class: 'w-full border rounded-md p-2', placeholder: 'Amount (USD)' %>
     </div>
 
-    <!-- You can add category selection logic here based on your requirements -->
-
     <div class="mb-6">
       <%= f.submit 'Create Transaction', class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
     </div>
   <% end %>
 
-  <%= link_to 'Back to Transactions', group_purchases_path(@group), class: 'text-gray-500 hover:underline block' %>
 </div>
