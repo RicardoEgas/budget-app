@@ -1,15 +1,22 @@
-<h1>Transactions for <%= @group.name %></h1>
+<div class="container mx-auto mt-8 text-center">
+  <h1 class="text-3xl font-semibold mb-6">Transactions for <%= @group.name %></h1>
 
-<p>Total Amount: $<%= @total_amount %></p>
-
-<%= link_to 'Add a new transaction', new_group_purchase_path(@group) %>
-
-<% @purchases.each do |purchase| %>
-  <div>
-    <h3><%= purchase.name %></h3>
-    <p>Amount: $<%= purchase.amount %></p>
-    <p>Created at: <%= purchase.created_at %></p>
+  <div class="mb-6">
+    <p class="text-gray-600 font-semibold mb-6">Total Amount: $<%= @total_amount %></p>
+    <%= link_to 'Add a new transaction', new_group_purchase_path(@group), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 transition duration-300 ease-in-out' %>
   </div>
-<% end %>
 
-<%= link_to 'Back to Groups', groups_path %>
+  <% @purchases.each do |purchase| %>
+    <div class="bg-white rounded-lg shadow-md mb-8">
+      <div class="flex justify-between items-center p-6">
+        <h3 class="text-xl font-semibold"><%= purchase.name %></h3>
+        <p class="text-green-500 font-semibold">Amount: $<%= purchase.amount %></p>
+      </div>
+      <div class="text-center p-6 bg-gray-100">
+        <p class="text-gray-600">Created at: <%= purchase.created_at %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back to Groups', groups_path, class: 'text-gray-500 hover:underline block mb-8' %>
+</div>
