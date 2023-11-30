@@ -12,5 +12,15 @@ class ApplicationController < ActionController::Base
         u.permit(:name, :email, :password, :current_password)
       end
     end
+  
+    def authenticate_user!
+      unless user_signed_in? || (controller_name == 'splash' && action_name == 'index')
+        super
+      end
+    end
+
+    def after_sign_in_path_for(resource_or_scope)
+        stored_location_for(resource_or_scope) || groups_path
+      end
   end
   

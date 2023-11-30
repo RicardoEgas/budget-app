@@ -1,11 +1,9 @@
-<!-- app/views/purchases/index.html.erb -->
 <h1>Transactions for <%= @group.name %></h1>
 
 <p>Total Amount: <%= @total_amount %></p>
 
 <%= link_to 'Add a new transaction', new_group_purchase_path(@group) %>
 
-<!-- Display transactions for this group -->
 <% @purchases.each do |purchase| %>
   <div>
     <h3><%= purchase.name %></h3>
