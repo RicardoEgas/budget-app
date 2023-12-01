@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/9e6b5903a6.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-   <%= link_to 'Logout', sign_out_user_path, method: :get %>
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/header' %>
     <%= yield %>
   </body>
 </html>

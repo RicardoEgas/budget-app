@@ -1,12 +1,22 @@
-<h1>Your Categories</h1>
+<div class="container mx-auto mt-8 bg-slate-100">
+  <h1 class="text-3xl text-center font-semibold mb-4">Categories</h1>
 
-<% @groups.each do |group| %>
-  <div>
-    <h2><%= group.name %></h2>
-    <p>Icon: <%= group.icon %></p>
-    <p>Total Amount: $<%= group.purchases.sum(:amount) %></p>
-    <%= link_to 'View Transactions', group_purchases_path(group) %>
+  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+    <% @groups.each do |group| %>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center">
+            <p class="text-gray-600">Icon: <%= group.icon %></p>
+            <h2 class="text-xl font-semibold ml-4"><%= group.name %></h2>
+          </div>
+          <p class="text-gray-600">Total Amount: $<%= group.purchases.sum(:amount) %></p>
+        </div>
+        <%= link_to 'View Transactions', group_purchases_path(group), class: 'text-blue-500 block mt-2' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
 
-<%= link_to 'Add a new category', new_group_path %>
+  <div class="mt-8 bg-green-500 p-4 rounded flex justify-center items-center">
+    <%= link_to 'Add a new category', new_group_path, class: 'text-white font-semibold py-2 px-4 border border-white rounded transition duration-300 ease-in-out hover:bg-white hover:text-green-500' %>
+  </div>
+</div>

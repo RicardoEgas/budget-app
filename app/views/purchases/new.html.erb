@@ -1,5 +1,6 @@
-<h1>New Transaction for <%= @group.name %></h1>
+<% content_for :additional_links do %>
+  <%= link_to 'Back to Transactions', group_purchases_path(@group), class: 'ml-4 text-white' %>
+<% end %>
 
 <%= render 'form', purchase: @purchase %>
 
-<%= link_to 'Back to Transactions', group_purchases_path(@group) %>

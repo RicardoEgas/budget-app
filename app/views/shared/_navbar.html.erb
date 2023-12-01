@@ -1,0 +1,8 @@
+<!-- app/views/shared/_navbar.html.erb -->
+
+<% unless user_signed_in? %>
+<nav class="flex justify-between navbar bg-blue-800 p-4 text-white">
+  <a href="<%= root_path %>" class="text-lg text-white"><i class="fas fa-arrow-left"></i></a>
+  <%= yield :navbar_links %>
+</nav>
+<% end %>
