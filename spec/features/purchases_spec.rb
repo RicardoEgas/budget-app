@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Purchases Index Page', type: :feature do
   before do
     user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
-    @group = Group.create(name: 'Category 1', icon: 'icon1.png', user: user)
+    @group = Group.create(name: 'Category 1', icon: 'icon1.png', user:)
     @purchases = [
-        Purchase.create(name: 'Transaction 1', amount: 50, user: user, group: @group),
-        Purchase.create(name: 'Transaction 2', amount: 75, user: user, group: @group)
-      ]
+      Purchase.create(name: 'Transaction 1', amount: 50, user:, group: @group),
+      Purchase.create(name: 'Transaction 2', amount: 75, user:, group: @group)
+    ]
 
     visit new_user_session_path
     fill_in 'Email', with: 'john@example.com'
@@ -17,9 +17,9 @@ RSpec.describe 'Purchases Index Page', type: :feature do
 
   it 'displays transactions with their details' do
     visit group_purchases_path(@group)
-  
+
     expect(page).to have_content("Transactions for #{@group.name}")
-  
+
     within '.container' do
       @purchases.each do |purchase|
         expect(page).to have_content(purchase.name)

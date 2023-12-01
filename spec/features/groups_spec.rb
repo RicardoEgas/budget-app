@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Groups Index Page', type: :feature do
   before do
     user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
-    Group.create(name: 'Category 1', icon: 'icon1.png', user: user)
-    Group.create(name: 'Category 2', icon: 'icon2.png', user: user)
+    Group.create(name: 'Category 1', icon: 'icon1.png', user:)
+    Group.create(name: 'Category 2', icon: 'icon2.png', user:)
 
     visit new_user_session_path
     fill_in 'Email', with: 'john@example.com'
