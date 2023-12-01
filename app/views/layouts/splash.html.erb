@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/style.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <%= stylesheet_link_tag "splash", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
 </head>
-<body>
+<body style="font-family: 'Proxima Nova', sans-serif;">
   <%= yield %>
 </body>
 </html>
