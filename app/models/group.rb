@@ -1,6 +1,7 @@
 class Group < ApplicationRecord
-  has_many :purchases
-  has_many :users
-
-  validates :name, :icon, presence: true
-end
+    belongs_to :user
+    has_many :purchases
+  
+    validates :name, :icon, :user, presence: true
+  end
+  
