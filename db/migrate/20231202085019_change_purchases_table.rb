@@ -5,4 +5,3 @@ class ChangePurchasesTable < ActiveRecord::Migration[7.1]
     add_reference :purchases, :author, foreign_key: { to_table: 'users' }
   end
 end
-
