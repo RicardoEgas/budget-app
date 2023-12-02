@@ -1,12 +1,16 @@
 <% content_for :additional_links do %>
-  <%= link_to 'Back to Categories', groups_path, class: 'ml-4 text-white' %>
+  <a href="<%= groups_path %>" class="text-lg text-white"><i class="fas fa-arrow-left"></i></a>
 <% end %>
 <div class="container mx-auto mt-8 text-center">
-  <h1 class="text-3xl font-semibold mb-6">Transactions for <%= @group.name %></h1>
+  <h1 class="text-3xl font-semibold mb-6" style="color: #434b54;">Transactions for <%= @group.name %></h1>
 
   <div class="mb-6">
     <p class="text-gray-600 font-semibold mb-6">Total Amount: $<%= @total_amount %></p>
-    <%= link_to 'Add a new transaction', new_group_purchase_path(@group), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 transition duration-300 ease-in-out' %>
+    <div class="mt-8 p-2 rounded text-center" style="background-color: #5fb523;">
+      <div class="w-90 mx-auto">
+        <%= link_to 'Add a new transaction', new_group_purchase_path(@group), class: 'text-white font-semibold py-4 px-4 border border-white rounded transition duration-300 ease-in-out hover:bg-white hover:text-green-500 block w-full' %>
+      </div>
+    </div>
   </div>
 
   <% @purchases.each do |purchase| %>

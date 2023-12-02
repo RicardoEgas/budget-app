@@ -1,5 +1,5 @@
 <% content_for :additional_links do %>
-  <%= link_to 'Back to Transactions', group_purchases_path(@group), class: 'ml-4 text-white' %>
+  <a href="<%= group_purchases_path(@group) %>" class="text-lg text-white"><i class="fas fa-arrow-left"></i></a>
 <% end %>
 
 <%= render 'form', purchase: @purchase %>
