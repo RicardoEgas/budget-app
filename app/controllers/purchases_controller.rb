@@ -13,7 +13,7 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = @group.purchases.new(purchase_params)
-    @purchase.user = current_user
+    @purchase.author_id = current_user.id
 
     respond_to do |format|
       if @purchase.save

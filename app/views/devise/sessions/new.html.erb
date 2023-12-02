@@ -15,19 +15,19 @@
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field py-3 px-3 text-gray-500 text-[16px]">
+        <div class="field py-3 px-3 text-gray-500 text-[16px] ml-4">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
       <% end %>
 
-      <div class="flex justify-center py-3 text-md text-gray-400 text-lg mt-4">
+      <div class="flex justify-left py-3 text-md text-gray-400 text-lg mt-4 ml-8">
         <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
       </div>
     </div>
 
     <div class="actions flex justify-center px-5 py-7 sign-up-container">
-      <%= f.submit "Log in", class: 'border border-white text-center px-7 text-white py-3 w-[80%]' %>
+      <%= f.submit "Log in", class: 'border border-white text-center px-7 text-white py-3 w-[80%]', style: 'background-color: #377ac2; cursor: pointer;', onmouseover: 'this.style.backgroundColor="#2a5a91"', onmouseout: 'this.style.backgroundColor="#377ac2"' %>
     </div>
   <% end %>
 </div>

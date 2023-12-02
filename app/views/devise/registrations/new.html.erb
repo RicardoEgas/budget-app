@@ -23,8 +23,9 @@
       </div>
     </div>
 
-    <div class="actions flex justify-center px-5 py-7 sign-up-container">
-      <%= f.submit "Sign up", class: 'border border-white text-center px-7 text-white py-3 w-[80%]' %>
-    </div>
+  <div class="actions flex justify-center px-5 py-7 sign-up-container">
+    <%= f.submit "Sign up", class: 'border border-white text-center px-7 text-white py-3 w-[80%]', style: 'background-color: #377ac2; cursor: pointer;', onmouseover: 'this.style.backgroundColor="#2a5a91"', onmouseout: 'this.style.backgroundColor="#377ac2"' %>
+  </div>
+
   <% end %>
 </div>

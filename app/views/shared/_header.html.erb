@@ -1,7 +1,5 @@
-<!-- app/views/shared/_header.html.erb -->
-
 <% if user_signed_in? %>
-  <header class="bg-blue-800 p-4 text-white flex justify-between items-center">
+  <header class="p-4 text-white flex justify-between items-center" style="background-color: #377ac2;">
     <%= image_tag('Budget-App.png', alt: 'Budget App', class: 'h-6 md:h-8 lg:h-10 xl:h-12') %>
     <%= yield :additional_links %>
     <%= link_to 'Logout', sign_out_user_path, method: :get, class: 'text-white' %>    
