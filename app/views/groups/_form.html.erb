@@ -1,0 +1,33 @@
+<div class="container mx-auto mt-8">
+  <h1 class="text-3xl text-center font-semibold mb-4" style="color: #434b54;">New Category</h1>
+
+  <%= form_for(@group) do |f| %>
+    <% if @group.errors.any? %>
+      <div id="error_explanation" class="bg-red-100 p-4 mb-4 rounded">
+        <h2 class="text-red-800"><%= pluralize(@group.errors.count, 'error') %> blocked this category from being saved:</h2>
+
+        <ul class="list-disc list-inside mt-2">
+          <% @group.errors.full_messages.each do |message| %>
+            <li class="text-red-600"><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-4">
+      <%= f.label :name, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= f.text_field :name, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :icon, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= f.text_field :icon, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+
+  <div class="mt-8 p-2 rounded text-center" style="background-color: #5fb523;">
+    <div class="w-90 mx-auto">
+      <%= f.submit 'Create Category', class: 'text-white font-semibold py-4 px-4 border border-white rounded transition duration-300 ease-in-out hover:bg-white hover:text-green-500 block w-full' %>
+    </div>
+  </div>
+  <% end %>
+</div>

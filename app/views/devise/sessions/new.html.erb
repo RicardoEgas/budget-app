@@ -1,0 +1,33 @@
+<% content_for :navbar_links do %>
+  <%= link_to "LOG IN", new_user_session_path %>
+  <%= link_to "REGISTER", new_user_registration_path, class: 'text-sm' %>
+<% end %>
+
+<div class="form-container h-100vh pt-10">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-body min-h-[75vh]">
+      <div class="field py-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'py-2 border-b w-[90%] mx-auto block outline-none text-md', required: true %>
+      </div>
+
+      <div class="field py-3">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'py-2 border-b w-[90%] mx-auto block outline-none text-md', required: true %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field py-3 px-3 text-gray-500 text-[16px] ml-4">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="flex justify-left py-3 text-md text-gray-400 text-lg mt-4 ml-8">
+        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+      </div>
+    </div>
+
+    <div class="actions flex justify-center px-5 py-7 sign-up-container">
+      <%= f.submit "Log in", class: 'border border-white text-center px-7 text-white py-3 w-[80%]', style: 'background-color: #377ac2; cursor: pointer;', onmouseover: 'this.style.backgroundColor="#2a5a91"', onmouseout: 'this.style.backgroundColor="#377ac2"' %>
+    </div>
+  <% end %>
+</div>

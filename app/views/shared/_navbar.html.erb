@@ -1,0 +1,6 @@
+<% unless user_signed_in? %>
+<nav class="flex justify-between navbar" style="background-color: #377ac2; color: white; padding: 1rem;">
+  <a href="<%= root_path %>" class="text-lg text-white"><i class="fas fa-arrow-left"></i></a>
+  <%= yield :navbar_links %>
+</nav>
+<% end %>
